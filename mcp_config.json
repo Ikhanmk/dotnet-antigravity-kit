@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "cwm-roslyn-navigator": {
+      "command": "dotnet",
+      "args": [
+        "C:/Users/Irfan/Desktop/dotnet-claude-kit/mcp/CWM.RoslynNavigator/src/bin/Release/net10.0/CWM.RoslynNavigator.dll"
+      ]
+    }
+  }
+}
