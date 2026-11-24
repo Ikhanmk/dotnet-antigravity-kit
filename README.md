@@ -1,11 +1,11 @@
 <p align="center">
-  <h1 align="center">dotnet-claude-kit</h1>
+  <h1 align="center">dotnet-claude-kit (Antigravity & Full-Stack Edition)</h1>
   <p align="center">
-    <strong>Make Claude Code an expert .NET developer.</strong>
+    <strong>Make Claude Code & Google Antigravity expert .NET 10 & Full-Stack Angular developers.</strong>
     <br />
-    52 skills &bull; 11 specialist agents &bull; 17 slash commands &bull; 10 rules &bull; 7 project templates &bull; 26 MCP tools &bull; automation hooks
+    53 skills &bull; 12 specialist agents &bull; 17 slash commands &bull; 11 rules &bull; 8 project templates &bull; 26 MCP tools &bull; automation hooks
     <br />
-    Built for .NET 10 / C# 14. Architecture-aware. Token-efficient.
+    Built for .NET 10 / C# 14 & Angular 19+. Architecture-aware. Token-efficient.
   </p>
 </p>
 
@@ -96,7 +96,34 @@ An **action layer** on top of the knowledge layer — Claude doesn't just know t
 
 > Prefer a narrated walkthrough with screenshots and troubleshooting? Read **[the complete installation and usage guide](https://codewithmukesh.com/blog/dotnet-claude-kit-guide/)**.
 
-### Plugin Install (Recommended)
+### Google Antigravity Native Install (Windows / Global)
+
+To install this kit natively into **Google Antigravity** without needing to clone it into individual projects:
+
+1. Build the Roslyn Navigator MCP server:
+   ```powershell
+   dotnet build mcp\CWM.RoslynNavigator\src\CWM.RoslynNavigator.csproj -c Release
+   ```
+2. Link this repository directly into Antigravity's plugin directory via a Directory Junction:
+   ```powershell
+   New-Item -ItemType Junction -Path "$HOME\.gemini\config\plugins\dotnet-kit" -Target "$HOME\Desktop\dotnet-claude-kit"
+   ```
+3. Register the MCP server in `$HOME\.gemini\config\mcp_config.json`:
+   ```json
+   {
+     "mcpServers": {
+       "cwm-roslyn-navigator": {
+         "command": "dotnet",
+         "args": [
+           "C:/Users/Irfan/Desktop/dotnet-claude-kit/mcp/CWM.RoslynNavigator/src/bin/Release/net10.0/CWM.RoslynNavigator.dll"
+         ]
+       }
+     }
+   }
+   ```
+Now Antigravity carries all .NET and Angular skills, agents, rules, and semantic Roslyn tools across **any project** automatically.
+
+### Claude Code Plugin Install (Standard)
 
 Install as a Claude Code plugin — all 52 skills (including 17 slash-command workflows), 11 agents, hooks, and MCP config activate globally. The 10 rules ship in this repo for you to copy into your project's `.claude/rules/`:
 
